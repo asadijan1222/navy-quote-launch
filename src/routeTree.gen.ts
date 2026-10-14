@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CarpetsRugsRouteImport } from './routes/carpets-rugs'
+import { Route as CurtainAccessoriesRouteImport } from './routes/curtain-accessories'
+import { Route as CurtainsRouteImport } from './routes/curtains'
+import { Route as InteriorFinishingRouteImport } from './routes/interior-finishing'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CarpetsRugsRoute = CarpetsRugsRouteImport.update({
+  id: '/carpets-rugs',
+  path: '/carpets-rugs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CurtainAccessoriesRoute = CurtainAccessoriesRouteImport.update({
+  id: '/curtain-accessories',
+  path: '/curtain-accessories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CurtainsRoute = CurtainsRouteImport.update({
+  id: '/curtains',
+  path: '/curtains',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorFinishingRoute = InteriorFinishingRouteImport.update({
+  id: '/interior-finishing',
+  path: '/interior-finishing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/carpets-rugs': typeof CarpetsRugsRoute
+  '/curtain-accessories': typeof CurtainAccessoriesRoute
+  '/curtains': typeof CurtainsRoute
+  '/interior-finishing': typeof InteriorFinishingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/carpets-rugs': typeof CarpetsRugsRoute
+  '/curtain-accessories': typeof CurtainAccessoriesRoute
+  '/curtains': typeof CurtainsRoute
+  '/interior-finishing': typeof InteriorFinishingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/carpets-rugs': typeof CarpetsRugsRoute
+  '/curtain-accessories': typeof CurtainAccessoriesRoute
+  '/curtains': typeof CurtainsRoute
+  '/interior-finishing': typeof InteriorFinishingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/carpets-rugs'
+    | '/curtain-accessories'
+    | '/curtains'
+    | '/interior-finishing'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/carpets-rugs'
+    | '/curtain-accessories'
+    | '/curtains'
+    | '/interior-finishing'
+  id:
+    | '__root__'
+    | '/'
+    | '/carpets-rugs'
+    | '/curtain-accessories'
+    | '/curtains'
+    | '/interior-finishing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CarpetsRugsRoute: typeof CarpetsRugsRoute
+  CurtainAccessoriesRoute: typeof CurtainAccessoriesRoute
+  CurtainsRoute: typeof CurtainsRoute
+  InteriorFinishingRoute: typeof InteriorFinishingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +104,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/carpets-rugs': {
+      id: '/carpets-rugs'
+      path: '/carpets-rugs'
+      fullPath: '/carpets-rugs'
+      preLoaderRoute: typeof CarpetsRugsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/curtain-accessories': {
+      id: '/curtain-accessories'
+      path: '/curtain-accessories'
+      fullPath: '/curtain-accessories'
+      preLoaderRoute: typeof CurtainAccessoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/curtains': {
+      id: '/curtains'
+      path: '/curtains'
+      fullPath: '/curtains'
+      preLoaderRoute: typeof CurtainsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interior-finishing': {
+      id: '/interior-finishing'
+      path: '/interior-finishing'
+      fullPath: '/interior-finishing'
+      preLoaderRoute: typeof InteriorFinishingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CarpetsRugsRoute: CarpetsRugsRoute,
+  CurtainAccessoriesRoute: CurtainAccessoriesRoute,
+  CurtainsRoute: CurtainsRoute,
+  InteriorFinishingRoute: InteriorFinishingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

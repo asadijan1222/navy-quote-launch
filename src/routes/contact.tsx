@@ -1,0 +1,6 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { PageHeading, ContactDetails } from '@/components/site';
+import { QuoteForm } from '@/components/quote-form';
+import { pageHead } from '@/lib/site-content';
+export const Route=createFileRoute('/contact')({head:()=>pageHead('Contact & Free Quote | Usmani Interior Islamabad','Request a free quote for curtains, accessories, carpets, or home décor. Call Usmani Interior or visit our store in Bahria Town, Islamabad.','/contact'),component:Contact});
+function Contact(){return <><PageHeading title="Let’s Bring Your Ideas Home." eyebrow="Contact & Free Quote" description="A beautiful space begins with a conversation. Tell us what you have in mind, or come and visit us in Bahria Town."/><section className="section"><div className="container-wide detail-grid"><div><span className="eyebrow">We’d love to hear from you</span><h2 className="section-heading">Your Space.<br/>Your Next Chapter.</h2><p className="body-copy">Ask about products, pricing, and suitable options. Measurements, delivery, and installation availability are confirmed directly with the store.</p><ContactDetails/></div><div><h2 className="section-heading !mt-0 !text-2xl">Get a Free Quote</h2><QuoteForm/></div></div></section></>}
