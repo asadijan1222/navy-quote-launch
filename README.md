@@ -8,7 +8,7 @@ Install with `bun install`; run `bun run dev`. Lovable automatically verifies bu
 Business contacts, categories, FAQs, image imports, and metadata helpers are in `src/lib/site-content.ts`. Page copy is in `src/routes`. Shared navigation/footer are in `src/components/site.tsx`. Category detail layouts are reusable through `src/components/category-page.tsx`. There is no CMS or admin dashboard.
 
 ## Images
-The original uploaded logo is unchanged and served via the Lovable asset pointer in `src/assets/usmani-logo.jpg.asset.json`. It is never cropped. A small proportion-preserving copy is used as the favicon. The header places the full logo beside a readable brand name because the supplied square artwork has substantial white margins.
+The approved Usmani Interior logo is served from `src/assets/Gemini_Generated_Image_ycmaoxycmaoxycma.png`. It is displayed without cropping via `object-fit: contain` in the shared header/footer brand component and is also bundled as the favicon.
 The three room photographs in `src/assets` are AI-generated illustrative inspiration, NOT customer projects, confirmed stock, or store photos. They are labeled accordingly. Replace them with approved business photography, and add genuine gallery entries before representing work visually as completed projects. No fake client names, locations, prices, ratings, or testimonials are used.
 
 ## Quote form
